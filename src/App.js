@@ -21,8 +21,6 @@ function App() {
       <Main>
         <Todos />
         <EditTodo />
-
-
       </Main>
     </div>
   );
