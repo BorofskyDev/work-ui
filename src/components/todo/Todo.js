@@ -1,8 +1,17 @@
 import React, { useState } from 'react'
 import { BsArrowClockwise, BsCheckCircleFill, BsCircle, BsTrash } from 'react-icons/bs'
+import firebase from '../../firebase'
 
 function Todo({todo}) {
     const [hover, setHover] = useState(false)
+
+    const deleteTodo = todo => {
+        firebase
+            .firestore()
+            .collection('todos')
+            .doc(todo.id)
+            .delete()
+    }
 
     return (
         <div className='Todo'>
@@ -15,7 +24,7 @@ function Todo({todo}) {
                     {
                         todo.checked ?
                         <span className='checked'>
-                            <BsCheckCircleFill color='#bebebe' />
+                                <BsCheckCircleFill color='#b500fd' />
                         </span>
                         :
                         <span className='unchecked'>
@@ -25,8 +34,8 @@ function Todo({todo}) {
                 </div>
                 {/* Color control for line through and text in todo. Control here instead of CSS */}
                 <div className='text'>
-                    <p style={{color : todo.checked ? '#bebebe' : '#000000'}}>{todo.text}</p>
-                    <span>{todo.time} - {todo.project}</span>
+                    <p style={{ color: todo.checked ? '#b500fd' : '#00d2f7'}}>{todo.text}</p>
+                    <span>{todo.time} - {todo.projectName}</span>
                     <div className={`line ${todo.checked ? 'line-through' : ''}`}></div>
                 </div>
                 <div className="add-to-next-day">
@@ -37,7 +46,10 @@ function Todo({todo}) {
                         </span>
                     }
                 </div>
-                <div className='delete-todo'>
+                <div 
+                    className='delete-todo'
+                    onClick={ () => deleteTodo(todo)}
+                >
                     {
                         (hover || todo.checked) &&
                         <span>

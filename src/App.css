@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .App {
@@ -12,19 +12,22 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  color: #00d2f7;
 }
 
 .Sidebar {
   width: 300px;
   min-width: 210px;
   height: 100%;
-  background-image: linear-gradient(to bottom, #182061, #8f6096, #341f24);
+  background: white;
+  background-image: linear-gradient(to right, #313131, #202020, #000000);
+  box-shadow: 10px;
 }
 
 .Main {
   width: 100%;
   height: 100%;
-  background: url("./images/mountains.jpg");
+  background: url("./images/galaxy-purple.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -36,7 +39,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 1rem;
-  border: 1px solid #ebebeb;
+  border-bottom: 1px solid #b500fd;
 }
 
 .User .info p {
@@ -71,38 +74,47 @@
 
 /* Add Todo */
 .AddNewTodo {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #b500fd;
 }
 
 .AddNewTodo .btn {
   padding: 1rem;
+  padding-bottom: 2rem;
   width: 100%;
-  height: 70px;
+  height: 80px;
 }
 
 .AddNewTodo .btn button {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 3px;
+  border-radius: 10px;
+  /* border: 1px solid; */
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
   font-size: 1rem;
-  background-color: #0080ff;
-  color: white;
+  background-image: linear-gradient(to right, #4300fd, rgba(53, 53, 53, 0.705));
+  color: #00d2f7;
   font-weight: bold;
   cursor: pointer;
+  display: inline-block;
+  letter-spacing: 4px;
 }
 
 .AddNewTodo .btn button:hover {
-  filter: brightness(1.1);
-  transition: all 300ms ease;
+  background: #00d2f7;
+  color: #050801;
+  box-shadow: 0 0 5px #00d2f7, 0 0 25px #00d2f7, 0 0 50px #00d2f7,
+    0 0 200px #00d2f7;
+  border-radius: 10px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 /* AddNewTodo Form */
 .TodoForm {
   padding: 1rem 1rem calc(1rem + 40px) 1rem;
   width: 100%;
-  background: white;
+  background: #3131318c;
   border-radius: 4px;
+  height: 80%;
 }
 
 .TodoForm .text input {
@@ -111,11 +123,15 @@
   margin-bottom: 0.5rem;
   border: none;
   font-size: 1.2rem;
+  border-radius: 20px;
+  background: #3131318c;
+  color: #00d2f7;
+  font-weight: bold;
 }
 
 .TodoForm .text input:focus {
   outline: none;
-  border-bottom: 1px solid #0080ff;
+  border-bottom: 1px solid #b500fd;
 }
 
 .TodoForm .remind {
@@ -193,7 +209,7 @@
 /* Calendar */
 .Calendar {
   padding: 1rem;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #b500fd;
 }
 
 .Calendar .header {
@@ -242,7 +258,7 @@
 /* Projects */
 .Projects {
   padding: 1rem;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #b500fd;
 }
 
 .Projects .header {
@@ -260,6 +276,7 @@
   margin-left: 5px;
   font-size: 1.1rem;
   font-weight: bold;
+  color: white;
 }
 
 .Projects .header .btns {
@@ -348,6 +365,7 @@
   background: #ffacac;
 }
 
+
 /* AddNewProject */
 .AddNewProject .add-button span {
   margin-right: 5px;
@@ -403,16 +421,18 @@
 }
 
 /* Todos */
+
 .Todos {
+  background: #31313193;
   width: 450px;
   height: 80%;
-  background-color: white;
+  padding: 3px;
   position: absolute;
-  bottom: 40px;
+  border-radius: 20px;
   left: 40px;
-  border-radius: 4px;
-  opacity: 0.9;
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  bottom: 40px;
+  /* opacity: 0.9; */
+  border: 2px solid #b500fd;
 }
 
 .Todos .selected-project {
@@ -421,7 +441,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   padding-bottom: 2px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #00d2f7;
 }
 
 .Todos .todos {
@@ -450,8 +470,8 @@
 }
 
 .Todo .todo-container .text span {
-  font-size: 0.8rem;
-  color: #bebebe;
+  font-size: 0.9rem;
+  color: rgb(255, 4, 171);
 }
 
 .Todo .todo-container .text .line {
@@ -477,14 +497,14 @@
 
 /* Edit Todo */
 .EditTodo {
+  background: #31313193;
   position: absolute;
   bottom: 40px;
   left: calc(40px + 450px + 40px);
-  background-color: white;
   height: 80%;
   width: 450px;
-  border-radius: 4px;
-  opacity: 0.9;
+  border-radius: 20px;
+  border: 2px solid #00d2f7;
 }
 
 .EditTodo .header {
@@ -492,5 +512,69 @@
   font-size: 1.2rem;
   font-weight: bold;
   padding-bottom: 2px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #b500fd;
+}
+
+/* Social Media Icons */
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.linkedIn,
+.gitHub,
+.twitter {
+  font-size: 3em;
+  cursor: pointer;
+  background-color: #18191f;
+  color: #b500fd8f;
+  box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+    2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080;
+  border-radius: 8px;
+  padding: 6px 6px;
+  margin: 0 20px;
+  animation: animate 5s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+}
+
+.linkedIn {
+  animation-delay: 0.3s;
+}
+
+.gitHub {
+  animation-delay: 0.7s;
+}
+
+.twitter {
+  animation-delay: 0.1s;
+}
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Next7Days */
+.Next7Days .day {
+  margin: 5px;
+  display: flex;
+}
+
+.Next7Days .day .name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.Next7Days .day .total-todos {
+  margin-left: 10px;
 }
