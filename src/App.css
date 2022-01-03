@@ -244,7 +244,7 @@
 
 .Calendar .header .btns span:hover {
   background-color: #ebebeb;
-  transition: all 300ms ease-in-out;
+  transition: background all 300ms ease-in-out;
 }
 
 .Calendar .items {
@@ -303,7 +303,7 @@
 
 .Projects .header .btns span:hover {
   background-color: #3000b3;
-  transition: all 300ms ease-in-out;
+  transition: background all 300ms ease-in-out;
 }
 
 .Projects .items {
@@ -406,7 +406,7 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: filter 300ms ease-in-out;
+  transition: background filter 300ms ease-in-out;
 }
 
 .ProjectForm button.cancel {
@@ -462,6 +462,13 @@
   align-items: center;
 }
 
+.Todo .todo-container .check-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+}
+
 .Todo .todo-container span {
   cursor: pointer;
 }
@@ -488,7 +495,7 @@
   position: absolute;
   top: 25%;
   width: 0;
-  transition: width 250ms ease-in-out;
+  transition: background width 250ms ease-in-out;
 }
 
 .Todo .todo-container .text .line-through {
