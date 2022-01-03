@@ -7,7 +7,7 @@ import Project from "./Project";
 function Projects() {
   const [showMenu, setShowMenu] = useState(true);
   const [edit, setEdit] = useState(false);
-  const pencilColor = edit ? "#1EC94C" : "#000000";
+  const pencilColor = edit ? "#b500fd" : "#00d2f7";
 
   // CONTEXT
   const { projects } = useContext(TodoContext);
