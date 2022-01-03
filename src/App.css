@@ -333,7 +333,7 @@
 .Project .btns .total-todos {
   position: absolute;
   right: 0;
-  background: #ebebeb;
+  background: #3000b3;
   width: 25px;
   height: 25px;
   font-size: 0.9rem;
@@ -436,6 +436,7 @@
   bottom: 40px;
   /* opacity: 0.9; */
   border: 2px solid #b500fd;
+  overflow-y: auto;
 }
 
 .Todos .selected-project {
@@ -483,7 +484,7 @@
 
 .Todo .todo-container .text .line-through {
   height: 1px;
-  background: #bebebe;
+  background: #3000b3;
   position: absolute;
   top: 25%;
   width: 0;

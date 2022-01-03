@@ -1,41 +1,73 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TodoForm from './TodoForm';
+import { TodoContext } from '../../context'
+import moment from 'moment';
+import firebase from '../../firebase'
+
 
 function EditTodo() {
+    
+    const [text, setText] = useState('')
+    const [day, setDay] = useState(new Date())
+    const [time, setTime] = useState(new Date())
+    const [todoProject, setTodoProject] = useState('')
 
-    const [text, setText] = useState()
-    const [day, setDay] = useState()
-    const [time, setTime] = useState()
-    const [todoProject, setTodoProject] = useState()
+    
+    const { selectedTodo, projects } = useContext(TodoContext)
 
-    const projects = [
-        { id: 1, name: "personal", numOfTodos: 0 },
-        { id: 2, name: "work", numOfTodos: 1 },
-        { id: 3, name: "other", numOfTodos: 2 }
-    ]
+    useEffect(() => {
+        if (selectedTodo) {
+            setText(selectedTodo.text)
+            setDay(moment(selectedTodo.date, 'MM/DD/YYYY'))
+            setTime(moment(selectedTodo.time, 'hh:mm A'))
+            setTodoProject(selectedTodo.projectName)
+        }
+    }, [selectedTodo])
+
+    useEffect(() => {
+        if (selectedTodo) {
+            firebase
+                .firestore()
+                .collection('todos')
+                .doc(selectedTodo.id)
+                .update({
+                    text,
+                    date: moment(day).format('MM/DD/YYYY'),
+                    day: moment(day).format('d'),
+                    time: moment(time).format('hh:mm A'),
+                    projectName: todoProject
+                })
+        }
+
+    }, [text, day, time, todoProject])
 
     function handleSubmit(e) {
 
     }
     return (
-        <div className='EditTodo'>
-            <div className="header">
-                Edit Todo
-            </div>
-            <div className="container">
-                <TodoForm
-                    handleSubmit={handleSubmit}
-                    text={text}
-                    setText={setText}
-                    day={day}
-                    setDay={setDay}
-                    time={time}
-                    todoProject={todoProject}
-                    setTodoProject={setTodoProject}
-                    setTime={setTime}
-                    projects={projects}
-                />
-            </div>
+        <div>
+            {
+                selectedTodo && 
+                <div className='EditTodo'>
+                    <div className="header">
+                        Edit Todo
+                    </div>
+                    <div className="container">
+                        <TodoForm
+                            handleSubmit={handleSubmit}
+                            text={text}
+                            setText={setText}
+                            day={day}
+                            setDay={setDay}
+                            time={time}
+                            todoProject={todoProject}
+                            setTodoProject={setTodoProject}
+                            setTime={setTime}
+                            projects={projects}
+                        />
+                    </div>
+                </div>
+            }
         </div>
     )
 }
