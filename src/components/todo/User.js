@@ -14,7 +14,7 @@ function User() {
 
         try {
             await logout()
-            navigate('/login')
+            navigate('/')
         } catch {
             setError('Failed to logout')
         }
@@ -28,7 +28,7 @@ function User() {
             <div className='info'>
                 <NavLink to='/update-profile'>Profile</NavLink>
                 {error && <Alert variant='danger'>{error}</Alert>}
-                <button onClick={handleLogout}>Logout</button>
+                <button class='btn' onClick={handleLogout}>Logout</button>
             </div>
         </div>
     )

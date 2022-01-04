@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
 import { NavLink, useNavigate } from "react-router-dom";
-import '../../App'
+import CenteredContainer from "./CenteredContainer";
+import "../../App.css";
 
 export default function Login() {
   const emailRef = useRef();
@@ -28,63 +29,29 @@ export default function Login() {
   }
 
   return (
-    <>
-      <style type="text/css">
-        {`
-        .btn-flat {
-          position: relative;
-          display: inline-block;
-          background-color: transparent;
-          color: #a9d5f4;
-          font-size: 1rem;
-          border-radius: 20px;
-          width: 50%;
-          transition: .5s;
-          letter-spacing: 4px;
-        }
-        `}
-      </style>
-
-      <div>
-        {/* <video
-                    autoPlay
-                    loop
-                    muted
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        left: "50%",
-                        top: "50%",
-                        height: "100%",
-                        objectFit: "cover",
-                        transform: "translate(-50%, -50%)",
-                    }}
-                >
-                    <source src={videoFive} type="video/mp4" />
-                </video> */}
-
-        <container className="box">
-          <div className="container">
-            <div className="flex-column flex-center">
-              <h1 class="chrome">ASIMOV ADVENTURES</h1>
-            </div>
+    
+      <div className='App'>
+        <div className="Login">
+          <div className="heading">
+              <h1 className="chrome">ASIMOV ADVENTURES</h1>
+            
           </div>
-          <h2 className="login-head">Log In</h2>
+          <h2 className="header">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="login-form" id="email">
-              <Form.Label className="text-white">Email</Form.Label>
+          <Form className="form-grouping" onSubmit={handleSubmit}>
+            <Form.Group className="form-group">
+              <Form.Label className="label">Email</Form.Label>
               <Form.Control
-                className="bg-transparent text-white rounded-pill"
+                className="input"
                 type="email"
                 ref={emailRef}
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group className="mb-4" id="password">
-              <Form.Label className="text-white">Password</Form.Label>
+            <Form.Group className="form-group">
+              <Form.Label className="label">Password</Form.Label>
               <Form.Control
-                className="bg-transparent text-white rounded-pill"
+                className="input"
                 variant="empty"
                 type="password"
                 ref={passwordRef}
@@ -110,8 +77,7 @@ export default function Login() {
           <div>
             <h1></h1>
           </div>
-        </container>
-      </div>
-    </>
+        </div>
+    </div>
   );
 }

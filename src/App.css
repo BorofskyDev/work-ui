@@ -1,5 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 
+@font-face {
+  font-family: "AileronsRegular";
+  src: local("AileronsRegular"),
+    url("./components/fonts/Ailerons-Regular.otf") format("truetype");
+  font-weight: bold;
+
+}
+
+@font-face {
+  font-family: "PROMETHEUS";
+  src: local("PROMETHEUS"),
+    url("./components/fonts/PROMETHEUS.ttf") format("truetype");
+  font-weight: bold;
+}
+
+* {
+  font-family: "AileronsRegular"
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -18,7 +37,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
 .Sidebar {
@@ -56,6 +74,15 @@
   text-decoration: none;
   display: flex;
   justify-content: flex-end;
+  color: white
+}
+
+.User .info button {
+  background-color: blue;
+  padding: 1px;
+  border-radius: 25%;
+  color: white;
+  cursor: pointer;
 }
 
 /* Modal */
@@ -96,7 +123,7 @@
   /* box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5); */
   font-size: 1rem;
   background-image: linear-gradient(to right, #b500fdde, #00d2f79a);
-  color: ;
+  color: #3000b3;
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
@@ -760,3 +787,82 @@
 }
 
 /* Login */
+.Login {
+  position: relative;
+  display: table;
+  /* transform: translated (-50%, -50%); */
+  width: 100%;
+  /* height: 100%; */
+  margin: 0;
+  align-self: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  /* background-image: linear-gradient(to right, #3000b3bd, rgba(53, 53, 53, 0.459)); */
+  /* background-image: linear-gradient(to right, #313131, #202020, #000000); */
+  box-shadow: 10px;
+  border-right: 0.5px solid #b500fd;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.Login .heading .chrome {
+  font-family: 'PROMETHEUS';
+  position: relative;
+  background-image: linear-gradient(#b500fd, #00aced, #3000b3, #00aced, #b500fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #f5f5f5;
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.Login .heading .form-grouping {
+  /* height: 50%; */
+  margin: 0;
+  align-self: center;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background-color: blue
+}
+
+.Login .header {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-bottom: 1px solid #00d2f7;
+  justify-content: center;
+  border-image: linear-gradient(to right, #3000b3, #00aced, #b500fd, #00aced, #3000b3);
+  border-image-slice: 1;
+  text-decoration: none
+}
+
+.Login .form-grouping .label {
+  padding: 1px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .Login .container .chrome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .box .container .chrome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+}
