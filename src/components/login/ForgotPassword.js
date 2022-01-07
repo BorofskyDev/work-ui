@@ -27,7 +27,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="App">
+    <div className="loginApp">
       <div className="Login">
         <div className="heading">
           <h2 className="header">Password Reset</h2>

@@ -33,7 +33,7 @@ export default function Signup() {
   }
 
   return (
-    <div className="App">
+    <div className="loginApp">
       <div className="Signup">
         <div className="heading">
           <h2 className="chrome ">Sign Up</h2>
