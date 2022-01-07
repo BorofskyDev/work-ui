@@ -29,7 +29,7 @@ export default function Login() {
   }
 
   return (
-    <div className="App">
+    <div className="loginApp">
       <div className="Login">
         <div className="heading">
           <h1 className="chrome">ASIMOV ADVENTURES</h1>
