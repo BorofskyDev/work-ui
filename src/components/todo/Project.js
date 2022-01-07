@@ -5,14 +5,14 @@ import RenameProject from "./RenameProject";
 import { TodoContext } from "../../context";
 import firebase from "../../firebase";
 import { useTransition, useSpring, animated } from "react-spring";
+import { useAuth } from "../../context/AuthContext";
 
 function Project({ project, edit }) {
-  // CONTEXT
   const { defaultProject, selectedProject, setSelectedProject } =
     useContext(TodoContext);
 
-  // STATE
   const [showModal, setShowModal] = useState(false);
+  const { currentUser } = useAuth();
 
   const deleteProject = (project) => {
     firebase
@@ -25,6 +25,7 @@ function Project({ project, edit }) {
           .firestore()
           .collection("todos")
           .where("projectName", "==", project.name)
+          .where("userId", "==", currentUser.uid)
           .get()
           .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {

@@ -67,17 +67,16 @@ function Todo({ todo }) {
         onMouseLeave={() => setHover(false)}
       >
         <div className="check-todo" onClick={() => checkTodo(todo)}>
-          {
-              checkTransitions((props, checked) => 
-                  todo.checked ? (
-                      <animated.span style={props} className="checked">
-                          <BsCheckCircleFill color="#b500fd" />
-                      </animated.span>
-                  ) : (
-                      <animated.span style={props} className="unchecked">
-                          <BsCircle color={todo.color} />
-                      </animated.span>
-              )
+          {checkTransitions((props, checked) =>
+            todo.checked ? (
+              <animated.span style={props} className="checked">
+                <BsCheckCircleFill color="#b500fd" />
+              </animated.span>
+            ) : (
+              <animated.span style={props} className="unchecked">
+                <BsCircle color={todo.color} />
+              </animated.span>
+            )
           )}
         </div>
         {/* Color control for line through and text in todo. Control here instead of CSS */}

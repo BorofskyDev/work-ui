@@ -1,74 +1,86 @@
-import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom';
-import CenteredContainer from './CenteredContainer';
-
+import React, { useRef, useState } from "react";
+import { Form, Button, Card, Alert } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
-    const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
-    let navigate = useNavigate()
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  let navigate = useNavigate();
 
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-    async function handleSubmit(e) {
-        e.preventDefault()
-
-        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError("Passwords do not match")
-        }
-
-        try {
-            setError("")
-            setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
-            navigate("/dashboard")
-
-        } catch {
-            setError("Failed to create an account")
-        }
-
-        setLoading(false)
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match");
     }
 
-    return (
+    try {
+      setError("");
+      setLoading(true);
+      await signup(emailRef.current.value, passwordRef.current.value);
+      navigate("/dashboard");
+    } catch {
+      setError("Failed to create an account");
+    }
 
-        <CenteredContainer>
-            <Card>
-                <Card.Body>
-                    <h2 className="text-center mt-2">Sign Up</h2>
+    setLoading(false);
+  }
 
-
-                    {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required>
-                            </Form.Control>
-                        </Form.Group>
-                        <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required>
-                            </Form.Control>
-                        </Form.Group>
-                        <Form.Group id="password-confirm">
-                            <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control type="password" ref={passwordConfirmRef} required>
-                            </Form.Control>
-                        </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
-                    </Form>
-                </Card.Body>
-
-            </Card>
-            <div className="w-100 text-center mt-2">
-                Already have an account? <NavLink to="/">Log In</NavLink>
-            </div>
-        </CenteredContainer>
-    )
+  return (
+    <div className="App">
+      <div className="Signup">
+        <div className="heading">
+          <h2 className="chrome ">Sign Up</h2>
+          <div className="header">
+            The adventure begins here
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form className="form-grouping" onSubmit={handleSubmit}>
+              <Form.Group className="form-group">
+                <Form.Label className="label">Email</Form.Label>
+                <Form.Control
+                  className="input"
+                  type="email"
+                  ref={emailRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="form-group">
+                <Form.Label className="label">Password</Form.Label>
+                <Form.Control
+                  className="input"
+                  type="password"
+                  ref={passwordRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group className="form-group">
+                <Form.Label className="label">Confirm Password</Form.Label>
+                <Form.Control
+                  className="input"
+                  type="password"
+                  ref={passwordConfirmRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Button className="login-btn" disabled={loading} type="submit">
+                Sign Up
+              </Button>
+            </Form>
+          </div>
+        </div>
+        <div className="subtext">
+          Already have an account?{" "}
+          <NavLink className="link" to="/">
+            Log In
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  );
 }

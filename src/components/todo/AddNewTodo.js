@@ -1,67 +1,66 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Modal from './Modal';
-import TodoForm from './TodoForm'
-import { TodoContext } from '../../context'
-import { calendarItems } from '../../constants'
-import firebase from '../../firebase'
-import moment from 'moment';
-import randomColor from 'randomcolor';
+import React, { useContext, useEffect, useState } from "react";
+import Modal from "./Modal";
+import TodoForm from "./TodoForm";
+import { TodoContext } from "../../context";
+import { calendarItems } from "../../constants";
+import firebase from "../../firebase";
+import moment from "moment";
+import randomColor from "randomcolor";
+import { useAuth } from "../../context/AuthContext";
 
 function AddNewTodo() {
   // CONTEXT
-  const { projects, selectedProject } = useContext(TodoContext)
+  const { projects, selectedProject } = useContext(TodoContext);
 
   // STATE
-  const [showModal, setShowModal] = useState(false)
-  const [text, setText] = useState('')
-  const [day, setDay] = useState(new Date())
-  const [time, setTime] = useState(new Date())
-  const [todoProject, setTodoProject] = useState(selectedProject)
+  const [showModal, setShowModal] = useState(false);
+  const [text, setText] = useState("");
+  const [day, setDay] = useState(new Date());
+  const [time, setTime] = useState(new Date());
+  const [todoProject, setTodoProject] = useState(selectedProject);
+  const { currentUser } = useAuth();
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     if (text && !calendarItems.includes(todoProject)) {
       firebase
         .firestore()
-        .collection('todos')
-        .add(
-          {
-            text: text,
-            date: moment(day).format('MM/DD/YYYY'),
-            day: moment(day).format('d'),
-            time: moment(time).format('hh:mm A'),
-            checked: false,
-            color: randomColor({
-              luminosity : 'bright',
-              hue: 'pink'
-            }),
-            projectName: todoProject
-          }
-        )
+        .collection("todos")
+        .add({
+          text: text,
+          date: moment(day).format("MM/DD/YYYY"),
+          day: moment(day).format("d"),
+          time: moment(time).format("hh:mm A"),
+          checked: false,
+          color: randomColor({
+            luminosity: "bright",
+            hue: "pink",
+          }),
+          projectName: todoProject,
+          userId: currentUser.uid,
+        });
 
-      setShowModal(false)
-      setText('')
-      setDay(new Date())
-      setTime(new Date())
+      setShowModal(false);
+      setText("");
+      setDay(new Date());
+      setTime(new Date());
     }
   }
 
   useEffect(() => {
-    setTodoProject(selectedProject)
-  }, [selectedProject])
+    setTodoProject(selectedProject);
+  }, [selectedProject]);
 
   return (
-    <div className='AddNewTodo'>
+    <div className="AddNewTodo">
       <div className="btn">
-        <button onClick={() => setShowModal(true)}>
-          + New Todo
-        </button>
+        <button onClick={() => setShowModal(true)}>+ New Todo</button>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
         <TodoForm
           handleSubmit={handleSubmit}
-          heading='Add new to do'
+          heading="Add new to do"
           text={text}
           setText={setText}
           day={day}
@@ -76,7 +75,7 @@ function AddNewTodo() {
         />
       </Modal>
     </div>
-  )
+  );
 }
 
-export default AddNewTodo
+export default AddNewTodo;

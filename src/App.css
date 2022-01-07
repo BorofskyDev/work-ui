@@ -5,7 +5,6 @@
   src: local("AileronsRegular"),
     url("./components/fonts/Ailerons-Regular.otf") format("truetype");
   font-weight: bold;
-
 }
 
 @font-face {
@@ -16,16 +15,11 @@
 }
 
 * {
-  font-family: "AileronsRegular"
-}
-
-* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
-
 
 .App {
   display: flex;
@@ -43,16 +37,20 @@
   width: 300px;
   min-width: 210px;
   height: 100%;
-  background-image: linear-gradient(to right, #3000b3bd, rgba(53, 53, 53, 0.459));
+  background-image: linear-gradient(
+    to right,
+    #3000b3bd,
+    rgba(53, 53, 53, 0.459)
+  );
   /* background-image: linear-gradient(to right, #313131, #202020, #000000); */
   box-shadow: 10px;
-  border-right: 0.5px solid #b500fd
+  border-right: 0.5px solid #b500fd;
 }
 
 .Main {
   width: 100%;
   height: 100%;
-  position: relative
+  position: relative;
 }
 
 /* User */
@@ -74,15 +72,22 @@
   text-decoration: none;
   display: flex;
   justify-content: flex-end;
-  color: white
+  color: white;
 }
 
-.User .info button {
-  background-color: blue;
+.User .info .btn {
   padding: 1px;
   border-radius: 25%;
-  color: white;
+  color: #00d2f7;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+}
+
+.User .info .btn:hover {
+  color: rgb(255, 4, 171);
 }
 
 /* Modal */
@@ -259,7 +264,6 @@
   margin-left: 5px;
   font-size: 1.1rem;
   font-weight: bold;
-
 }
 
 .Calendar .header .btns span {
@@ -287,8 +291,6 @@
   font-size: 1rem;
   cursor: pointer;
 }
-
-
 
 /* Projects */
 .Projects {
@@ -401,14 +403,11 @@
   background: #dd0042;
 }
 
-
 /* AddNewProject */
 .AddNewProject .add-button span {
   margin-right: 5px;
   border-radius: 200px;
-
 }
-
 
 /* ProjectForm */
 .ProjectForm {
@@ -481,7 +480,7 @@
 /* Todos */
 
 .Todos {
-  background: #31313193;
+  background: #070707b2;
   width: 450px;
   height: 80%;
   padding: 3px;
@@ -492,11 +491,11 @@
   /* opacity: 0.9; */
   border: 2px solid #b500fd;
   overflow-y: auto;
-
+  font-weight: bold;
 }
 
 .Todos::-webkit-scrollbar {
-  width: 5px
+  width: 5px;
 }
 
 .Todos .selected-project {
@@ -593,7 +592,6 @@
   justify-content: center;
   align-items: center;
   margin-top: 1em;
-
 }
 
 .linkedIn,
@@ -604,7 +602,10 @@
 .stocks,
 .micro-word,
 .excel,
-.icon-email {
+.icon-email,
+.meditate,
+.workout,
+.calculator {
   position: relative;
   width: 40px;
   height: 40px;
@@ -614,18 +615,18 @@
   padding: 6px;
   box-sizing: border-box;
   text-decoration: none;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .linkedIn {
   animation-delay: 0.3s;
   display: block;
-  background: linear-gradient(0deg, #3000b3, #b500fd);
+  background: linear-gradient(90deg, #007bb6, #b500fd);
   border-radius: 50%;
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #3000b3;
-  transition: .5s;
+  transition: 0.5s;
   color: #007bb6;
 }
 
@@ -637,12 +638,12 @@
 .gitHub {
   animation-delay: 0.3s;
   display: block;
-  background: linear-gradient(0deg, #3000b3, #b500fd);
+  background: linear-gradient(0deg, #000000, #b500fd);
   border-radius: 50%;
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #3000b3;
-  transition: .5s;
+  transition: 0.5s;
   color: #340079;
 }
 
@@ -654,12 +655,12 @@
 .twitter {
   animation-delay: 0.3s;
   display: block;
-  background: linear-gradient(0deg, #3000b3, #b500fd);
+  background: linear-gradient(0deg, #003b50, #f1f1f1);
   border-radius: 50%;
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #3000b3;
-  transition: .5s;
+  transition: 0.5s;
   color: #00aced;
 }
 
@@ -676,7 +677,7 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #51b300;
-  transition: .5s;
+  transition: 0.5s;
   color: #cbecfc;
 }
 
@@ -693,12 +694,12 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #3000b3;
-  transition: .5s;
+  transition: 0.5s;
   color: #ffffff;
 }
 
 .news:hover {
-  box-shadow: 0 2px 5px #030301;
+  box-shadow: 0 2px 5px #c4c2c2;
   text-decoration: none;
 }
 
@@ -710,7 +711,7 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #00f784;
-  transition: .5s;
+  transition: 0.5s;
   color: #00fd7f;
 }
 
@@ -727,7 +728,7 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #000436;
-  transition: .5s;
+  transition: 0.5s;
   color: #001485;
 }
 
@@ -744,7 +745,7 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #00f784;
-  transition: .5s;
+  transition: 0.5s;
   color: #00fd7f;
 }
 
@@ -761,7 +762,7 @@
   line-height: calc(60px - 12px);
   font-size: 12px;
   color: #00f784;
-  transition: .5s;
+  transition: 0.5s;
   color: #e4fd00;
 }
 
@@ -770,6 +771,56 @@
   text-decoration: none;
 }
 
+.meditate {
+  animation-delay: 0.3s;
+  display: block;
+  background: linear-gradient(#0400ff 50%, #5700a8);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size: 12px;
+  color: #00f784;
+  transition: 0.5s;
+  color: #b8005c;
+}
+
+.meditate:hover {
+  box-shadow: 0 2px 5px #b8005c;
+  text-decoration: none;
+}
+
+.workout {
+  animation-delay: 0.3s;
+  display: block;
+  background: linear-gradient(65deg, #000000 50%, #7100f3);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size: 12px;
+  color: #00f784;
+  transition: 0.5s;
+  color: #b601c7;
+}
+
+.workout:hover {
+  box-shadow: 0 2px 5px #b601c7;
+  text-decoration: none;
+}
+
+.calculator {
+  animation-delay: 0.3s;
+  display: block;
+  background: linear-gradient(30deg, #505050 50%, #0affc2);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size: 12px;
+  color: #00f784;
+  transition: 0.5s;
+  color: #c74001;
+}
+
+.calculator:hover {
+  box-shadow: 0 2px 5px #c74001;
+  text-decoration: none;
+}
 
 /* Next7Days */
 .Next7Days .day {
@@ -790,26 +841,39 @@
 .Login {
   position: relative;
   display: table;
-  /* transform: translated (-50%, -50%); */
   width: 100%;
-  /* height: 100%; */
   margin: 0;
   align-self: center;
   justify-content: center;
   padding: 2.5rem;
   box-sizing: border-box;
-  /* background-image: linear-gradient(to right, #3000b3bd, rgba(53, 53, 53, 0.459)); */
-  /* background-image: linear-gradient(to right, #313131, #202020, #000000); */
   box-shadow: 10px;
   border-right: 0.5px solid #b500fd;
   text-align: center;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .Login .heading .chrome {
-  font-family: 'PROMETHEUS';
+  font-family: "PROMETHEUS";
   position: relative;
-  background-image: linear-gradient(#b500fd, #00aced, #3000b3, #00aced, #b500fd);
+  background-image: linear-gradient(
+    #b500fd,
+    #00aced,
+    #3000b3,
+    #00aced,
+    #b500fd
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #f5f5f5;
@@ -826,7 +890,7 @@
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  background-color: blue
+  background-color: blue;
 }
 
 .Login .header {
@@ -834,9 +898,16 @@
   font-size: 2rem;
   border-bottom: 1px solid #00d2f7;
   justify-content: center;
-  border-image: linear-gradient(to right, #3000b3, #00aced, #b500fd, #00aced, #3000b3);
+  border-image: linear-gradient(
+    to right,
+    #3000b3,
+    #00aced,
+    #b500fd,
+    #00aced,
+    #3000b3
+  );
   border-image-slice: 1;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .Login .form-grouping .label {
@@ -844,7 +915,262 @@
   position: relative;
   display: flex;
   text-align: center;
-  justify-content: center
+  justify-content: center;
+}
+
+.Login .label {
+  font-weight: bold;
+}
+
+.Login .input {
+  border-radius: 20px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #a200ff;
+  background: transparent;
+  padding: 5px;
+  color: #00d2f7;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.Login .login-btn {
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+  width: 10%;
+  border-radius: 20px;
+  border: 1px solid;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  font-family: "PROMETHEUS";
+  background-image: linear-gradient(to right, #b500fdde, #00d2f79a);
+  color: #3000b3;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 4px;
+  padding: 8px;
+}
+
+.Login .login-btn:hover {
+  background: #00d2f7;
+  color: #050801;
+  box-shadow: 0 0 5px #00d2f7, 0 0 25px #00d2f7, 0 0 50px #00d2f7,
+    0 0 200px #00d2f7;
+  border-radius: 20px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.Login .subtext .link {
+  font-size: 20px;
+  color: #f700e3;
+}
+
+.Signup {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin: 0;
+  align-self: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  box-shadow: 10px;
+  border-right: 0.5px solid #b500fd;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.Signup .heading .chrome {
+  font-family: "PROMETHEUS";
+  position: relative;
+  background-image: linear-gradient(
+    #b500fd,
+    #00aced,
+    #3000b3,
+    #00aced,
+    #b500fd
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #f5f5f5;
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.Signup .header {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 1px solid #00d2f7;
+  justify-content: center;
+  border-image: linear-gradient(
+    to right,
+    #3000b3,
+    #00aced,
+    #b500fd,
+    #00aced,
+    #3000b3
+  );
+  border-image-slice: 1;
+  text-decoration: none;
+}
+
+.Signup .form-grouping .heading {
+  margin: 0;
+  align-self: center;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background-color: blue;
+}
+
+.Signup .form-grouping .label {
+  padding: 1px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.Signup .label {
+  font-weight: bold;
+}
+
+.Signup .input {
+  border-radius: 20px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #a200ff;
+  background: transparent;
+  padding: 5px;
+  color: #00d2f7;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.Signup .login-btn {
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+  width: 10%;
+  border-radius: 20px;
+  border: 1px solid;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  font-family: "PROMETHEUS";
+  background-image: linear-gradient(to right, #b500fdde, #00d2f79a);
+  color: #3000b3;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 4px;
+  padding: 8px;
+}
+
+.Signup .login-btn:hover {
+  background: #00d2f7;
+  color: #050801;
+  box-shadow: 0 0 5px #00d2f7, 0 0 25px #00d2f7, 0 0 50px #00d2f7,
+    0 0 200px #00d2f7;
+  border-radius: 20px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.Signup .subtext .link {
+  font-size: 20px;
+  color: #f700e3;
+}
+
+.Profile {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin: 0;
+  align-self: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  box-shadow: 10px;
+  border-right: 0.5px solid #b500fd;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2),
+    rgba(4, 196, 221, 0.4),
+    rgba(189, 3, 148, 0.6),
+    rgba(54, 1, 114, 0.8),
+    rgba(189, 3, 148, 0.6),
+    rgba(4, 196, 221, 0.4),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.Profile .heading .chrome {
+  font-family: "AileronsRegular";
+  position: relative;
+  background-image: linear-gradient(
+    #b500fd,
+    #00aced,
+    #3000b3,
+    #00aced,
+    #b500fd
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #f5f5f5;
+  font-size: 3.5rem;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.Profile .link {
+  font-size: 20px;
+  margin-left: 1rem;
+  padding: 5px;
+  margin-top: 5px;
+  color: #00d2f7;
+}
+
+.Profile .btn {
+  margin-top: 15px;
+  margin-bottom: 1.5rem;
+  width: 10%;
+  border-radius: 20px;
+  border: 1px solid;
+  box-shadow: 5px 5px 10px 10px rgba(53, 0, 138, 0.5);
+  font-size: 1rem;
+  font-family: "PROMETHEUS";
+  background-image: linear-gradient(to right, #b500fdde, #00d2f79a);
+  color: #3000b3;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 4px;
+  padding: 8px;
+}
+
+.Profile .btn:hover {
+  background: #00d2f7;
+  color: #050801;
+  box-shadow: 0 0 5px #00d2f7, 0 0 25px #00d2f7, 0 0 50px #00d2f7,
+    0 0 200px #00d2f7;
+  border-radius: 20px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 @media (min-aspect-ratio: 16/9) {

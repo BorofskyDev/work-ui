@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
 import { NavLink, useNavigate } from "react-router-dom";
-import CenteredContainer from "./CenteredContainer";
+
 import "../../App.css";
 
 export default function Login() {
@@ -29,55 +29,58 @@ export default function Login() {
   }
 
   return (
-    
-      <div className='App'>
-        <div className="Login">
-          <div className="heading">
-              <h1 className="chrome">ASIMOV ADVENTURES</h1>
-            
-          </div>
-          <h2 className="header">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form className="form-grouping" onSubmit={handleSubmit}>
-            <Form.Group className="form-group">
-              <Form.Label className="label">Email</Form.Label>
-              <Form.Control
-                className="input"
-                type="email"
-                ref={emailRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group className="form-group">
-              <Form.Label className="label">Password</Form.Label>
-              <Form.Control
-                className="input"
-                variant="empty"
-                type="password"
-                ref={passwordRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button
-              variant="flat"
-              disabled={loading}
-              className="login-btn"
-              type="submit"
-            >
-              Log In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <NavLink to="/forgot-password">Forgot Password?</NavLink>
-          </div>
-
-          <div className="w-100 text-center mt-3 text-white font-control-sm">
-            Don't have an account? <NavLink to="/signup">Sign up here</NavLink>
-          </div>
-          <div>
-            <h1></h1>
-          </div>
+    <div className="App">
+      <div className="Login">
+        <div className="heading">
+          <h1 className="chrome">ASIMOV ADVENTURES</h1>
         </div>
+        <h2 className="header">Log In</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Form className="form-grouping" onSubmit={handleSubmit}>
+          <Form.Group className="form-group">
+            <Form.Label className="label">Email</Form.Label>
+            <Form.Control
+              className="input"
+              type="email"
+              ref={emailRef}
+              required
+            ></Form.Control>
+          </Form.Group>
+          <Form.Group className="form-group">
+            <Form.Label className="label">Password</Form.Label>
+            <Form.Control
+              className="input"
+              variant="empty"
+              type="password"
+              ref={passwordRef}
+              required
+            ></Form.Control>
+          </Form.Group>
+          <Button
+            variant="flat"
+            disabled={loading}
+            className="login-btn"
+            type="submit"
+          >
+            Log In
+          </Button>
+        </Form>
+        <div className="subtext">
+          <NavLink className="link" to="/forgot-password">
+            Forgot Password?
+          </NavLink>
+        </div>
+
+        <div className="subtext">
+          Don't have an account?{" "}
+          <NavLink className="link" to="/signup">
+            Sign up here
+          </NavLink>
+        </div>
+        <div>
+          <h1></h1>
+        </div>
+      </div>
     </div>
   );
 }
