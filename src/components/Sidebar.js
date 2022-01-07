@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react";
+import { NavLink  } from "react-router-dom";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { SiLinkedin, SiMicrosoftexcel } from "react-icons/si";
@@ -32,12 +33,12 @@ function Sidebar({ children }) {
       {children}
       {/* This could likely be turned into a flexbox, flex-wrap:nowrap CSS property */}
       <div className="icons">
-        <SiLinkedin className="linkedIn" />
+       <SiLinkedin className="linkedIn"/>
         <FaGithub className="gitHub" />
         <FaTwitter className="twitter" />
       </div>
       <div className="icons">
-        <TiWeatherStormy className="stormy" />
+        <NavLink to="/weather"><TiWeatherStormy className="stormy" /></NavLink>
         <GiNewspaper className="news" />
         <VscGraphLine className="stocks" />
       </div>

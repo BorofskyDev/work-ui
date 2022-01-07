@@ -496,7 +496,7 @@
   border: 2px solid #b500fd;
   overflow-y: auto;
   font-weight: bold;
-  box-shadow: 1px 4px 5px 7px ;
+  box-shadow: 1px 4px 5px 7px;
 }
 
 .Todos::-webkit-scrollbar {
@@ -1176,6 +1176,70 @@
     0 0 200px #00d2f7;
   border-radius: 20px;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Weather */
+.weatherApp {
+  display: flex;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #00d2f7;
+  background: url("./images/dock.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.Weather {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin: 0;
+  align-self: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  box-shadow: 10px;
+  border-right: 0.5px solid #b500fd;
+  text-align: center;
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0));
+}
+
+
+
+.Weather .input {
+  padding: 15px;
+  width: 80%;
+  margin: auto;
+  background: transparent;
+  font-size: 16px;
+  color: #00d2f7;
+  font-weight: bold;
+}
+
+.Weather .input:focus {
+  outline: none;
+}
+
+.Weather .welcome {
+ margin-bottom: 15px;
+}
+
+.Weather .bottom-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #f700e3
 }
 
 @media (min-aspect-ratio: 16/9) {

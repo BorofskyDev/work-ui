@@ -8,6 +8,7 @@ import Signup from "./components/login/Signup";
 import ForgotPassword from "./components/login/ForgotPassword";
 import UpdateProfile from "./components/login/UpdateProfile";
 import Profile from "./components/login/Profile";
+import Weather from "./components/weather/Weather"
 import "./App.css";
 
 function App() {
@@ -45,6 +46,15 @@ function App() {
             element={
               <PrivateRoute>
                 <UpdateProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            exact
+            path="/weather"
+            element={
+              <PrivateRoute>
+                <Weather />
               </PrivateRoute>
             }
           />
