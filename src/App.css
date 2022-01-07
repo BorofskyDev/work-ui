@@ -37,11 +37,9 @@
   width: 300px;
   min-width: 210px;
   height: 100%;
-  background-image: linear-gradient(
-    to right,
-    #3000b3bd,
-    rgba(53, 53, 53, 0.459)
-  );
+  background-image: linear-gradient(to right,
+      #3000b3bd,
+      rgba(53, 53, 53, 0.459));
   /* background-image: linear-gradient(to right, #313131, #202020, #000000); */
   box-shadow: 10px;
   border-right: 0.5px solid #b500fd;
@@ -148,7 +146,7 @@
 .TodoForm {
   padding: 1rem 1rem calc(1rem + 40px) 1rem;
   width: 100%;
-  background: #3131318c;
+  background: #7777778c;
   border-radius: 20px;
   height: 80%;
 }
@@ -223,6 +221,11 @@
   top: 0;
   right: 5px;
   cursor: pointer;
+}
+
+.TodoForm .end {
+  color: #02e0bb;
+  font-weight: bold;
 }
 
 .TodoForm .confirm {
@@ -850,30 +853,26 @@
   box-shadow: 10px;
   border-right: 0.5px solid #b500fd;
   text-align: center;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0));
 }
 
 .Login .heading .chrome {
   font-family: "PROMETHEUS";
   position: relative;
-  background-image: linear-gradient(
-    #b500fd,
-    #00aced,
-    #3000b3,
-    #00aced,
-    #b500fd
-  );
+  background-image: linear-gradient(#b500fd,
+      #00aced,
+      #3000b3,
+      #00aced,
+      #b500fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #f5f5f5;
@@ -898,14 +897,12 @@
   font-size: 2rem;
   border-bottom: 1px solid #00d2f7;
   justify-content: center;
-  border-image: linear-gradient(
-    to right,
-    #3000b3,
-    #00aced,
-    #b500fd,
-    #00aced,
-    #3000b3
-  );
+  border-image: linear-gradient(to right,
+      #3000b3,
+      #00aced,
+      #b500fd,
+      #00aced,
+      #3000b3);
   border-image-slice: 1;
   text-decoration: none;
 }
@@ -978,30 +975,26 @@
   box-shadow: 10px;
   border-right: 0.5px solid #b500fd;
   text-align: center;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0));
 }
 
 .Signup .heading .chrome {
   font-family: "PROMETHEUS";
   position: relative;
-  background-image: linear-gradient(
-    #b500fd,
-    #00aced,
-    #3000b3,
-    #00aced,
-    #b500fd
-  );
+  background-image: linear-gradient(#b500fd,
+      #00aced,
+      #3000b3,
+      #00aced,
+      #b500fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #f5f5f5;
@@ -1016,14 +1009,12 @@
   font-size: 2rem;
   border-bottom: 1px solid #00d2f7;
   justify-content: center;
-  border-image: linear-gradient(
-    to right,
-    #3000b3,
-    #00aced,
-    #b500fd,
-    #00aced,
-    #3000b3
-  );
+  border-image: linear-gradient(to right,
+      #3000b3,
+      #00aced,
+      #b500fd,
+      #00aced,
+      #3000b3);
   border-image-slice: 1;
   text-decoration: none;
 }
@@ -1105,30 +1096,26 @@
   box-shadow: 10px;
   border-right: 0.5px solid #b500fd;
   text-align: center;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2),
-    rgba(4, 196, 221, 0.4),
-    rgba(189, 3, 148, 0.6),
-    rgba(54, 1, 114, 0.8),
-    rgba(189, 3, 148, 0.6),
-    rgba(4, 196, 221, 0.4),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2),
+      rgba(4, 196, 221, 0.4),
+      rgba(189, 3, 148, 0.6),
+      rgba(54, 1, 114, 0.8),
+      rgba(189, 3, 148, 0.6),
+      rgba(4, 196, 221, 0.4),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0));
 }
 
 .Profile .heading .chrome {
   font-family: "AileronsRegular";
   position: relative;
-  background-image: linear-gradient(
-    #b500fd,
-    #00aced,
-    #3000b3,
-    #00aced,
-    #b500fd
-  );
+  background-image: linear-gradient(#b500fd,
+      #00aced,
+      #3000b3,
+      #00aced,
+      #b500fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #f5f5f5;

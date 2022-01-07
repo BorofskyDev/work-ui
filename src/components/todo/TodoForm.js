@@ -69,7 +69,7 @@ function TodoForm({
                 </div>
               ))
             ) : (
-              <div style={{ color: "#ff0000" }}>
+                <div className="end">
                 Please add a project before proceeding
               </div>
             )}
